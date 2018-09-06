@@ -1,1 +1,16 @@
-Speaker.create({first_name: "Dani", last_name: "Zaghian", email: "danielle@actualize.co"})
+
+
+12.times do
+  
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+
+speaker = Speaker.create(
+              {first_name: first_name,
+               last_name: last_name,
+                email: Faker::Internet.free_email("#{first_name}.#{last_name}")}
+                )
+
+speaker.save
+
+end
